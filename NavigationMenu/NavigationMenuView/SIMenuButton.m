@@ -18,10 +18,10 @@
         if ([self defaultGradient]) {
             
         } else {
-            [self setSpotlightCenter:CGPointMake(frame.size.width/2, frame.size.height*(-1)+10)];
+//            [self setSpotlightCenter:CGPointMake(frame.size.width/2, frame.size.height*(-1)+10)];
             [self setBackgroundColor:[UIColor clearColor]];
-            [self setSpotlightStartRadius:0];
-            [self setSpotlightEndRadius:frame.size.width/2];
+//            [self setSpotlightStartRadius:0];
+//            [self setSpotlightEndRadius:frame.size.width/2];
         }
         
         frame.origin.y -= 2.0;
@@ -31,9 +31,9 @@
         NSDictionary *currentStyle = [[UINavigationBar appearance] titleTextAttributes];
         self.title.textColor = currentStyle[UITextAttributeTextColor];
         self.title.font = currentStyle[UITextAttributeFont];
-        self.title.shadowColor = currentStyle[UITextAttributeTextShadowColor];
-        NSValue *shadowOffset = currentStyle[UITextAttributeTextShadowOffset];
-        self.title.shadowOffset = shadowOffset.CGSizeValue;
+//        self.title.shadowColor = currentStyle[UITextAttributeTextShadowColor];
+//        NSValue *shadowOffset = currentStyle[UITextAttributeTextShadowOffset];
+//        self.title.shadowOffset = shadowOffset.CGSizeValue;
         [self addSubview:self.title];
 
         self.arrow = [[UIImageView alloc] initWithImage:[SIMenuConfiguration arrowImage]];

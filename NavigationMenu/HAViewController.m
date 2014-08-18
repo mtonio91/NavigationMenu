@@ -13,13 +13,19 @@
 @end
 
 @implementation HAViewController
+{
+    SINavigationMenuView *menu;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.navigationController.navigationBar setTintColor:[UIColor orangeColor]];
+    
     if (self.navigationItem) {
         CGRect frame = CGRectMake(0.0, 0.0, 200.0, self.navigationController.navigationBar.bounds.size.height);
-        SINavigationMenuView *menu = [[SINavigationMenuView alloc] initWithFrame:frame title:@"Menu"];
+        menu = [[SINavigationMenuView alloc] initWithFrame:frame title:@"Menu"];
         [menu displayMenuInView:self.navigationController.view];
         menu.items = @[@"News", @"Top Articles", @"Messages", @"Account", @"Settings", @"Top Articles", @"Messages"];
         menu.delegate = self;
@@ -56,6 +62,7 @@
 - (void)didSelectItemAtIndex:(NSUInteger)index
 {
     NSLog(@"did selected item at index %d", index);
+    [menu setMenuTitle:[menu.items objectAtIndex:index]];
 }
 
 - (void)didReceiveMemoryWarning

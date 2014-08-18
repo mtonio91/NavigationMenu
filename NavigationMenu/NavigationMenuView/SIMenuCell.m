@@ -31,7 +31,7 @@
         self.selectionStyle = UITableViewCellEditingStyleNone;
         
         self.cellSelection = [[SICellSelection alloc] initWithFrame:self.bounds andColor:[SIMenuConfiguration selectionColor]];
-        [self.cellSelection.layer setCornerRadius:6.0];
+//        [self.cellSelection.layer setCornerRadius:6.0];
         [self.cellSelection.layer setMasksToBounds:YES];
         
         self.cellSelection.alpha = 0.0;
